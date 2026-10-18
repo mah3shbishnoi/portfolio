@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import FooterDock from './components/FooterDock';
+import CustomScrollbar from './components/CustomScrollbar';
 import Hero from './sections/Hero';
 import About from './sections/About';
 import OpenSource from './sections/OpenSource';
@@ -24,6 +25,7 @@ function App() {
 
   return (
     <div>
+      <CustomScrollbar />
       <Navbar />
       <main>
         {currentHash === '#resume' ? (

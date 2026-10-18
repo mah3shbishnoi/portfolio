@@ -1,0 +1,72 @@
+/* Custom Vertical Scrollbar Track (Desktop) */
+.custom-scrollbar-track {
+  position: fixed;
+  top: 0;
+  right: 2px;
+  bottom: 0;
+  width: 8px;
+  z-index: 999999;
+  background: rgba(0, 85, 255, 0.04);
+  border-left: 1px solid rgba(0, 85, 255, 0.08);
+  border-radius: 9999px;
+  opacity: 0.35;
+  transition: opacity 0.25s cubic-bezier(0.25, 1, 0.5, 1), width 0.2s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.2s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+[data-theme="dark"] .custom-scrollbar-track {
+  background: rgba(51, 119, 255, 0.03);
+  border-left: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.custom-scrollbar-track.active,
+.custom-scrollbar-track:hover {
+  opacity: 1;
+  width: 10px;
+  background: rgba(0, 85, 255, 0.08);
+}
+
+[data-theme="dark"] .custom-scrollbar-track.active,
+[data-theme="dark"] .custom-scrollbar-track:hover {
+  background: rgba(51, 119, 255, 0.08);
+}
+
+/* Custom Scrollbar Thumb: Vibrant Gradient with Neon Glow */
+.custom-scrollbar-thumb {
+  position: absolute;
+  top: 0;
+  left: 1px;
+  width: calc(100% - 2px);
+  background: linear-gradient(180deg, #0055FF 0%, #0077FF 100%);
+  box-shadow: 0 2px 8px rgba(0, 85, 255, 0.45);
+  border-radius: 9999px;
+  cursor: grab;
+  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.04s linear;
+  box-sizing: border-box;
+}
+
+[data-theme="dark"] .custom-scrollbar-thumb {
+  background: linear-gradient(180deg, #3377FF 0%, #00D2FF 100%);
+  box-shadow: 0 0 10px rgba(51, 119, 255, 0.6), 0 0 18px rgba(0, 210, 255, 0.35);
+}
+
+.custom-scrollbar-thumb:hover,
+.custom-scrollbar-thumb.dragging {
+  background: linear-gradient(180deg, #0044DD 0%, #0066EE 100%);
+  box-shadow: 0 0 14px rgba(0, 85, 255, 0.75), 0 0 22px rgba(0, 85, 255, 0.35);
+  cursor: grabbing;
+}
+
+[data-theme="dark"] .custom-scrollbar-thumb:hover,
+[data-theme="dark"] .custom-scrollbar-thumb.dragging {
+  background: linear-gradient(180deg, #4D8BFF 0%, #1AE6FF 100%);
+  box-shadow: 0 0 16px rgba(51, 119, 255, 0.9), 0 0 28px rgba(0, 210, 255, 0.65);
+}
+
+/* Mobile: completely hide scrollbar on screens <= 768px */
+@media (max-width: 768px) {
+  .custom-scrollbar-track {
+    display: none !important;
+  }
+}
