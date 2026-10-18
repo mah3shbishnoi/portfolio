@@ -374,47 +374,42 @@
 .diff-header-bar {
   display: flex;
   align-items: center;
-  padding: 0.65rem 1rem;
+  justify-content: space-between;
+  padding: 0.6rem 0.95rem;
   background: #161b22;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  gap: 0.85rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   width: 100%;
   box-sizing: border-box;
+}
+
+.diff-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
   min-width: 0;
 }
 
-.mac-traffic-dots {
-  display: flex;
-  gap: 6px;
-  flex-shrink: 0;
+.diff-chevron {
+  color: #8b949e;
+  font-size: 0.75rem;
+  user-select: none;
 }
-
-.traffic-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-}
-
-.traffic-dot.close { background: #ff5f56; }
-.traffic-dot.minimize { background: #ffbd2e; }
-.traffic-dot.expand { background: #27c93f; }
 
 .diff-filename {
   font-family: 'Fira Code', 'Courier New', monospace;
   font-size: 0.78rem;
-  color: #8b949e;
+  color: #c9d1d9;
+  font-weight: 500;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  flex: 1;
-  min-width: 0;
 }
 
 .diff-code-area {
-  padding: 0.85rem 0;
+  padding: 0.4rem 0 0.75rem 0;
   font-family: 'Fira Code', 'Courier New', monospace;
-  font-size: 0.84rem;
-  line-height: 1.65;
+  font-size: 0.82rem;
+  line-height: 1.6;
   overflow-x: auto;
   max-width: 100%;
   width: 100%;
@@ -426,7 +421,7 @@
 .diff-code-line {
   display: flex;
   align-items: center;
-  padding: 0.15rem 1rem;
+  padding: 0.12rem 0.75rem;
   color: #c9d1d9;
   width: max-content;
   min-width: 100%;
@@ -434,30 +429,62 @@
 }
 
 .diff-code-line.chunk-header {
-  color: #58a6ff;
-  background: rgba(56, 139, 253, 0.1);
+  color: #79c0ff;
+  background: rgba(56, 139, 253, 0.12);
   font-weight: 500;
+  padding: 0.35rem 0.75rem;
+  margin-bottom: 0.25rem;
+  border-top: 1px solid rgba(56, 139, 253, 0.18);
+  border-bottom: 1px solid rgba(56, 139, 253, 0.18);
+}
+
+.chunk-btn-icon {
+  color: #58a6ff;
+  font-size: 0.8rem;
+  margin-right: 0.65rem;
+  padding: 0.05rem 0.35rem;
+  background: rgba(56, 139, 253, 0.22);
+  border-radius: 4px;
+  user-select: none;
 }
 
 .diff-code-line.line-added {
   background: rgba(46, 160, 67, 0.18);
-  color: #3fb950;
-  font-weight: 600;
-  border-left: 3px solid #2ea043;
+  color: #e6edf3;
 }
 
-.diff-ln {
+.diff-code-line.line-added .diff-code {
+  color: #7ee787;
+}
+
+.diff-code-line.line-added .diff-sign {
+  color: #3fb950;
+  font-weight: 700;
+}
+
+.diff-ln-old,
+.diff-ln-new {
   width: 32px;
-  color: #484f58;
-  font-size: 0.76rem;
+  color: #6e7681;
+  font-size: 0.75rem;
   user-select: none;
   flex-shrink: 0;
   text-align: right;
-  margin-right: 1.25rem;
+  padding-right: 0.65rem;
+}
+
+.diff-sign {
+  width: 18px;
+  color: #6e7681;
+  font-size: 0.8rem;
+  user-select: none;
+  flex-shrink: 0;
+  text-align: center;
 }
 
 .diff-code {
   white-space: pre;
+  padding-left: 0.35rem;
 }
 
 /* Bottom Action Buttons */

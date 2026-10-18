@@ -77,40 +77,60 @@ const OpenSource = () => {
                   {/* Code Diff Window */}
                   <div className="kernel-diff-box">
                     <div className="diff-header-bar">
-                      <div className="mac-traffic-dots">
-                        <span className="traffic-dot close" />
-                        <span className="traffic-dot minimize" />
-                        <span className="traffic-dot expand" />
+                      <div className="diff-header-left">
+                        <span className="diff-chevron">▾</span>
+                        <span className="diff-filename">
+                          drivers/net/wireless/mediatek/mt76/mt7921/pci.c
+                        </span>
                       </div>
-                      <span className="diff-filename">
-                        drivers/net/wireless/mediatek/mt76/mt7921/pci.c
-                      </span>
                     </div>
 
                     <div className="diff-code-area">
                       <div className="diff-code-line chunk-header">
-                        <span className="diff-ln"></span>
-                        <span className="diff-code">--- +87b67aa @@ 375,6 @@</span>
+                        <span className="chunk-btn-icon">↕</span>
+                        <span className="diff-code">@@ -375,6 +375,7 @@ static int mt7921_pci_probe(struct pci_dev *pdev,</span>
                       </div>
                       <div className="diff-code-line">
-                        <span className="diff-ln">375</span>
-                        <span className="diff-code">static int mt7921_pci_probe(struct pdev, const struct id) &#123;</span>
+                        <span className="diff-ln-old">375</span>
+                        <span className="diff-ln-new">375</span>
+                        <span className="diff-sign"> </span>
+                        <span className="diff-code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;</span>
                       </div>
                       <div className="diff-code-line">
-                        <span className="diff-ln">376</span>
-                        <span className="diff-code">&nbsp;&nbsp;&nbsp;&nbsp;map-&gt;rx.wm2_complete_mask = 0;</span>
+                        <span className="diff-ln-old">376</span>
+                        <span className="diff-ln-new">376</span>
+                        <span className="diff-sign"> </span>
+                        <span className="diff-code"></span>
+                      </div>
+                      <div className="diff-code-line">
+                        <span className="diff-ln-old">377</span>
+                        <span className="diff-ln-new">377</span>
+                        <span className="diff-sign"> </span>
+                        <span className="diff-code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;map-&gt;rx.wm2_complete_mask = 0;</span>
                       </div>
                       <div className="diff-code-line line-added">
-                        <span className="diff-ln">377</span>
-                        <span className="diff-code"><strong>+</strong>&nbsp;&nbsp;&nbsp;map-&gt;rx.all_complete_mask &amp;= ~MT_INT_RX_DONE_WM2;</span>
+                        <span className="diff-ln-old"></span>
+                        <span className="diff-ln-new">378</span>
+                        <span className="diff-sign">+</span>
+                        <span className="diff-code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;map-&gt;rx.all_complete_mask &amp;= ~MT_INT_RX_DONE_WM2;</span>
                       </div>
                       <div className="diff-code-line">
-                        <span className="diff-ln">378</span>
-                        <span className="diff-code">&nbsp;&nbsp;&nbsp;&nbsp;dev-&gt;irq_map = map;</span>
+                        <span className="diff-ln-old">378</span>
+                        <span className="diff-ln-new">379</span>
+                        <span className="diff-sign"> </span>
+                        <span className="diff-code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dev-&gt;irq_map = map;</span>
                       </div>
                       <div className="diff-code-line">
-                        <span className="diff-ln">379</span>
-                        <span className="diff-code">&#125;</span>
+                        <span className="diff-ln-old">379</span>
+                        <span className="diff-ln-new">380</span>
+                        <span className="diff-sign"> </span>
+                        <span className="diff-code">&nbsp;&nbsp;&nbsp;&nbsp;&#125;</span>
+                      </div>
+                      <div className="diff-code-line">
+                        <span className="diff-ln-old">380</span>
+                        <span className="diff-ln-new">381</span>
+                        <span className="diff-sign"> </span>
+                        <span className="diff-code"></span>
                       </div>
                     </div>
                   </div>
