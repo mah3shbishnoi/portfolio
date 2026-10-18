@@ -38,7 +38,6 @@ const Experience = () => {
         <Reveal>
           <div className="experience-header">
             <h2 className="experience-title">Work</h2>
-            <span className="experience-meta">{experiences.length} roles • reverse chronological</span>
           </div>
         </Reveal>
         

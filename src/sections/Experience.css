@@ -29,13 +29,6 @@
   color: var(--text-primary);
 }
 
-.experience-meta {
-  font-family: 'Fira Code', 'Courier New', Courier, monospace;
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  text-transform: lowercase;
-}
-
 .timeline {
   position: relative;
   padding-left: 20px;
