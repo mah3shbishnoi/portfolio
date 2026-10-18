@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import FooterDock from './components/FooterDock';
 import Hero from './sections/Hero';
 import About from './sections/About';
+import OpenSource from './sections/OpenSource';
 import Experience from './sections/Experience';
 import Projects from './sections/Projects';
 import Skills from './sections/Skills';
@@ -31,6 +32,7 @@ function App() {
           <>
             <Hero />
             <About />
+            <OpenSource />
             <Experience />
             <Projects />
             <Skills />

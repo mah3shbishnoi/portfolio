@@ -34,6 +34,23 @@
   letter-spacing: -0.02em;
 }
 
+.about-highlight-link {
+  color: var(--accent-color);
+  text-decoration: none !important;
+  border-bottom: 2px solid rgba(0, 85, 255, 0.4);
+  transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+  display: inline-block;
+  cursor: pointer;
+}
+
+.about-highlight-link:hover {
+  text-decoration: none !important;
+  border-bottom-color: var(--accent-color);
+  color: var(--accent-color);
+  transform: translateY(-2px);
+  filter: drop-shadow(0 4px 10px rgba(0, 85, 255, 0.35));
+}
+
 .about-text p {
   font-size: 1.15rem;
   line-height: 1.8;
