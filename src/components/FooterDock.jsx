@@ -46,7 +46,11 @@ const FooterDock = () => {
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4l11.733 16h4.267l-11.733-16z"></path><path d="M4 20l6.768-6.768m2.46-2.46l6.772-6.772"></path></svg>
         </a>
         <div className="dock-divider"></div>
-        <button className="dock-item theme-toggle-btn" onClick={toggleTheme}>
+        <button
+          className="dock-item theme-toggle-btn"
+          onClick={toggleTheme}
+          aria-label="Toggle color theme"
+        >
           <span className="dock-tooltip">Toggle Theme</span>
           {theme === 'light' ? <Moon size={20} strokeWidth={1.5} /> : <Sun size={20} strokeWidth={1.5} />}
         </button>
