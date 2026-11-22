@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://mah3shbishnoi.github.io/portfolio",
+  "homepage": "https://mah3shbishnoi.is-a.dev",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

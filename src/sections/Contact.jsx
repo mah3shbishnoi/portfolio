@@ -9,9 +9,7 @@ const Contact = () => {
           <div className="contact-header">
             <h2 className="contact-title">Let's build something great together.</h2>
             <p className="contact-subtitle">
-              Currently seeking internship opportunities and open to exciting AI/ML projects. 
-              My inbox is always open. Whether you have a question or just want to say hi, 
-              I'll try my best to get back to you!
+              I'm looking for SWE and AI engineering internships. Reach out about roles, projects, or open source.
             </p>
           </div>
         </Reveal>
