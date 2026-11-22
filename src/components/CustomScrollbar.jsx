@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import './CustomScrollbar.css';
 
 const CustomScrollbar = () => {
@@ -44,7 +44,7 @@ const CustomScrollbar = () => {
   }, []);
 
   useEffect(() => {
-    updateScroll();
+    const rafId = requestAnimationFrame(updateScroll);
     window.addEventListener('scroll', updateScroll, { passive: true });
     window.addEventListener('resize', updateScroll, { passive: true });
 
@@ -55,6 +55,7 @@ const CustomScrollbar = () => {
     }
 
     return () => {
+      cancelAnimationFrame(rafId);
       window.removeEventListener('scroll', updateScroll);
       window.removeEventListener('resize', updateScroll);
       resizeObserver.disconnect();

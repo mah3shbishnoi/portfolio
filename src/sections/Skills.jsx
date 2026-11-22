@@ -1,4 +1,3 @@
-import React from 'react';
 import './Skills.css';
 import Reveal from '../components/Reveal';
 

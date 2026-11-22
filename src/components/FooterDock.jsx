@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Home, Folder, FileText, Sun, Moon } from 'lucide-react';
 import './FooterDock.css';
 

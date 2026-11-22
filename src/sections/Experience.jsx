@@ -1,4 +1,3 @@
-import React from 'react';
 import './Experience.css';
 import Reveal from '../components/Reveal';
 

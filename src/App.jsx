@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import FooterDock from './components/FooterDock';
 import CustomScrollbar from './components/CustomScrollbar';

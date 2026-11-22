@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const Navbar = () => {
   const [active, setActive] = useState('Home');
@@ -25,10 +25,10 @@ const Navbar = () => {
     isClickScrolling.current = true;
     
     if (linkId === 'resume') {
-      window.location.hash = 'resume';
+      window.location.assign('#resume');
     } else {
       if (window.location.hash === '#resume') {
-        window.location.hash = '';
+        window.location.assign('#');
         setTimeout(() => {
           const section = document.getElementById(linkId);
           if (section) section.scrollIntoView({ behavior: 'smooth' });

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const Reveal = ({ children, delay = 0, className = '' }) => {
   const [isVisible, setIsVisible] = useState(false);

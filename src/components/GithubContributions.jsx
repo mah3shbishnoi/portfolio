@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useRef } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import './GithubContributions.css';
 
 const USERNAME = 'mah3shbishnoi';
@@ -6,11 +6,26 @@ const CACHE_KEY = `github_contributions_${USERNAME}`;
 const CACHE_TTL = 6 * 60 * 60 * 1000; // 6 hours in milliseconds
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+const readCachedContributions = () => {
+  try {
+    const cached = localStorage.getItem(CACHE_KEY);
+    if (cached) {
+      const { timestamp, data: cachedData } = JSON.parse(cached);
+      if (cachedData && Array.isArray(cachedData.contributions)) {
+        return { data: cachedData, isFresh: Date.now() - timestamp < CACHE_TTL };
+      }
+    }
+  } catch (e) {
+    console.warn('LocalStorage error while reading GitHub contributions:', e);
+  }
+  return { data: null, isFresh: false };
+};
 
 const GithubContributions = () => {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [initialCache] = useState(readCachedContributions);
+  const [data, setData] = useState(initialCache.data);
+  const [loading, setLoading] = useState(!initialCache.data);
   const [error, setError] = useState(null);
   const [tooltip, setTooltip] = useState({ visible: false, x: 0, y: 0, content: '' });
   const containerRef = useRef(null);
@@ -18,32 +33,12 @@ const GithubContributions = () => {
   const hasAutoScrolled = useRef(false);
 
   useEffect(() => {
+    if (initialCache.isFresh) return;
+
     let isMounted = true;
+    const hadCachedData = Boolean(initialCache.data);
 
-    // 1. Check localStorage Cache first
-    let hasFreshCache = false;
-    try {
-      const cached = localStorage.getItem(CACHE_KEY);
-      if (cached) {
-        const { timestamp, data: cachedData } = JSON.parse(cached);
-        if (cachedData && Array.isArray(cachedData.contributions)) {
-          if (isMounted) {
-            setData(cachedData);
-            setLoading(false);
-          }
-          if (Date.now() - timestamp < CACHE_TTL) {
-            hasFreshCache = true;
-          }
-        }
-      }
-    } catch (e) {
-      console.warn('LocalStorage error while reading GitHub contributions:', e);
-    }
-
-    // 2. If fresh cache is present, skip network fetch to protect rate-limit
-    if (hasFreshCache) return;
-
-    // 3. Fetch live data
+    // Fetch live data
     fetch(`https://github-contributions-api.jogruber.de/v4/${USERNAME}?y=last`)
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP error ${res.status}`);
@@ -66,7 +61,7 @@ const GithubContributions = () => {
       .catch((err) => {
         if (isMounted) {
           // If we already had cached data, silently ignore error
-          if (!data) {
+          if (!hadCachedData) {
             setError(err.message);
           }
           setLoading(false);
@@ -76,10 +71,10 @@ const GithubContributions = () => {
     return () => {
       isMounted = false;
     };
-  }, []);
+  }, [initialCache]);
 
   // Process contributions into 53 weeks and calculate statistics
-  const { weeks, monthLabels, totalContributions, longestStreak, currentStreak } = useMemo(() => {
+  const { weeks, monthLabels, totalContributions, longestStreak } = useMemo(() => {
     if (!data || !Array.isArray(data.contributions) || data.contributions.length === 0) {
       return { weeks: [], monthLabels: [], totalContributions: 0, longestStreak: 0, currentStreak: 0 };
     }

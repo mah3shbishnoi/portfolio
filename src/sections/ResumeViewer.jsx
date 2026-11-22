@@ -1,4 +1,3 @@
-import React from 'react';
 import { Download, ArrowLeft } from 'lucide-react';
 import './ResumeViewer.css';
 

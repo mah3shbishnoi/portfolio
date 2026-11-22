@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './Projects.css';
 import Reveal from '../components/Reveal';
 import GithubContributions from '../components/GithubContributions';
@@ -36,9 +36,9 @@ const projects = [
     title: "Real-Time Barge-In Voice AI",
     fullTitle: "Real-Time Barge-In Detection for Voice AI",
     kind: "Voice AI & Low-Latency Audio Pipeline",
-    description: "Engineered a low-latency voice AI pipeline that eliminates conversational latency during user interruptions. Integrated Silero VAD to continuously monitor microphone input, instantly halting TTS playback the exact millisecond user speech is detected to produce a natural conversational flow.",
-    highlight: "Zero-latency interruption via Silero VAD & Groq Whisper",
-    tags: ["Python", "Silero VAD", "Groq Whisper", "LLM APIs", "Edge TTS"],
+    description: "Voice assistants feel robotic when they keep talking over a user who tries to interrupt. Built an end-to-end streaming voice pipeline that monitors mic audio while the AI speaks and halts text-to-speech the moment user speech starts—cutting interruption response to ~100ms using local Silero VAD and sentence-level LLM token streaming with 32ms frames.",
+    highlight: "~100ms interruption response via Silero VAD & 32ms frames",
+    tags: ["Python", "Silero VAD", "Groq Whisper", "LLM APIs", "Edge TTS", "SoundDevice"],
     github: "https://github.com/mah3shbishnoi/real-time-barge-in-detection",
     demo: ""
   },
@@ -167,6 +167,11 @@ const Projects = () => {
       {/* Detail Information */}
       <div className="project-detail-body">
         <h3 className="project-detail-title">{project.fullTitle}</h3>
+        {project.highlight && (
+          <p className="project-detail-highlight" style={{ fontSize: '0.88rem', fontWeight: 500, color: 'var(--accent-color)', margin: 0 }}>
+            {project.highlight}
+          </p>
+        )}
         <p className="project-detail-desc">{project.description}</p>
         
         <div className="project-detail-tech">
