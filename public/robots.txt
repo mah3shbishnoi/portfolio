@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mah3shbishnoi.github.io/portfolio/sitemap.xml

@@ -6,7 +6,7 @@ const Hero = () => {
 Initializing developer profile...
 
 > load_skills()
-["Python", "React", "AI/ML", "C++"]
+["Python", "C", "C++", "Linux", "Distributed Systems", "AI/ML"]
 
 > get_status()
 "Available for internships"
@@ -37,12 +37,12 @@ Initializing developer profile...
         </div>
         
         <h1 className="hero-title">Mahesh Saran.</h1>
-        <h2 className="hero-subtitle">Software Engineer & AI/ML Student.</h2>
+        <h2 className="hero-subtitle">AI &amp; Systems Software Engineer — B.Tech CSE &amp; AIML (2028).</h2>
         <p className="hero-description">
-          I believe ideas become clearer and stronger as we work on them. 
-          Currently looking for internship opportunities and exciting AI-related projects.
+          I build reliable backend systems and low-latency AI tools — from upstream Linux kernel patches to distributed job schedulers.
         </p>
         <div className="hero-links">
+          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume ↗</a>
           <a href="https://github.com/mah3shbishnoi" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
           <a href="https://www.linkedin.com/in/mahesh-saran" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
           <a href="https://leetcode.com/mahesh_saran" target="_blank" rel="noopener noreferrer">LeetCode ↗</a>

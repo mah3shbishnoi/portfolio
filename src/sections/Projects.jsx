@@ -3,9 +3,33 @@ import './Projects.css';
 import Reveal from '../components/Reveal';
 import GithubContributions from '../components/GithubContributions';
 
-const CATEGORIES = ["All", "Web App", "AI", "Tools"];
+const CATEGORIES = ["All", "Systems", "AI", "Web App", "Tools"];
 
 const projects = [
+  {
+    id: "relay",
+    categories: ["Systems"],
+    title: "Relay",
+    fullTitle: "Relay — Distributed Job Scheduler",
+    kind: "Distributed Systems & Fault-Tolerant Backend",
+    description: "Single-node task runners fail silently under worker crashes and cannot distribute or retry workloads. Built a distributed job scheduler from scratch with task queueing, worker heartbeats, fault-tolerant retries, and state persistence—improving throughput from 128 to 550 jobs/s with automatic recovery on node failure.",
+    highlight: "550 jobs/s throughput with automatic recovery on node failure",
+    tags: ["Java 21", "Spring Boot", "PostgreSQL"],
+    github: "https://github.com/mah3shbishnoi/relay",
+    demo: ""
+  },
+  {
+    id: "codesense-eval",
+    categories: ["AI"],
+    title: "CodeSense Eval",
+    fullTitle: "CodeSense Eval — LLM Bug-Detection Study",
+    kind: "LLM Evaluation & Static Analysis",
+    description: "Teams adopt LLMs for code review without knowing which models actually catch real bugs versus false positives. Built an automated evaluation harness to benchmark LLMs on real buggy code samples, measuring precision, recall, and failure modes—tested across 7 configs with 27 pytest tests.",
+    highlight: "Tested 7 LLM evaluation configs with 27 pytest tests",
+    tags: ["Python", "Pydantic", "AST", "BM25", "Ruff"],
+    github: "https://github.com/mah3shbishnoi/codesense",
+    demo: ""
+  },
   {
     id: "barge-in",
     categories: ["AI"],

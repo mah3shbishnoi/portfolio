@@ -55,6 +55,7 @@ const OpenSource = () => {
 
                   {/* Summary Lines */}
                   <div className="kernel-brief-lines">
+                    <p>Fixed a bug in the official Linux kernel Wi-Fi driver for MediaTek MT7902 chips where the system listened for hardware signals that don&apos;t exist on that model. My patch was reviewed and accepted by Linux kernel maintainers into the upstream wireless tree.</p>
                     <p>MT7902 lacks an MCU_WA ring, yet the driver enabled its interrupt (bit 22), listening for a non-existent queue. Corrected <code>all_complete_mask</code> from <code>0x00400005</code> to <code>0x00000005</code> for proper hardware interrupt handling.</p>
                   </div>
 
